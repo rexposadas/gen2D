@@ -1,5 +1,4 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/rexposadas/gen2D)](https://goreportcard.com/report/github.com/rexposadas/gen2D)
-[![GoDoc](https://godoc.org/github.com/rexposadas/gen2D?status.svg)](https://godoc.org/github.com/rexposadas/gen2D)
 
 # Gen2D
 Gen2D is a CLI which makes it easy to generated 2D art in Go.
