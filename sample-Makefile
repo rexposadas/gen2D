@@ -1,0 +1,13 @@
+build:
+	go build --race -o /tmp/get2D
+
+all: build
+	/tmp/get2D circles
+	/tmp/get2D circles gradient
+	/tmp/get2D circles grid
+	/tmp/get2D hole
+	/tmp/get2D perls
+	/tmp/get2D squares spiral
+	/tmp/get2D random-shapes
+
+.PHONY: build all
