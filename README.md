@@ -1,47 +1,49 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/rexposadas/gen2D)](https://goreportcard.com/report/github.com/rexposadas/gen2D)
 
 # Gen2D
-Gen2D is a CLI which makes it easy to generated 2D art in Go.
+Gen2D is a command-line interface (CLI) tool that simplifies the generation of 2D art in Go.
 
-This CLI makes heavy use of this [repository](https://github.com/jdxyw/generativeart): `github.com/jdxyw/generativeart`.
+This tool is built on top of the [generativeart](https://github.com/jdxyw/generativeart) library.
 
-# Quick start
+# Quick Start
 
-Build the app and run it:
+Build and run the application:
 
-`go build -o ./gen2D && ./gen2D circles`
+```bash
+go build -o ./gen2D && ./gen2D circles
+```
 
-That creates a directory called "output" with art you just generated. 
+This command creates a directory called "output" containing your generated artwork. 
 
-If you are on a macbook you can open the files with `open output/*`. A sample circle image is shown below.
+On macOS, you can view the generated files using:
+```bash
+open output/*
+```
 
-![](images/samples-669a073e.png)
+# Available Commands
 
+To see all available options, run:
+```bash
+./gen2D
+```
 
-# Using more options 
+Some example commands to try:
+```bash
+./gen2D random-shapes
+./gen2D perls
+```
 
-You can view the options you can have by: 
+# Using the Sample Makefile
 
-`./gen2D`
+The repository includes a sample Makefile to help you generate art. To create artwork using all the commands in the Makefile:
 
+```bash
+make -f sample-Makefile all
+```
 
-# Other calls you can try 
+# Configuration Files
 
-`./gen2D random-shapes`
-
-`./gen2D perls`
-
-
-# Sample makefile
-
-There is a sample makefile in the repo. You can use it to generate art.
-
-`make -f sample-Makefile all`
-
-That will generate art for all the calls in the makefile.
-
-# Using a config file
-Config files lets you alter the looks of your art. in the input folder you can see this config: 
+You can customize your artwork using configuration files. Here's an example configuration file (in the input folder):
 
 ```json
 {
@@ -55,34 +57,31 @@ Config files lets you alter the looks of your art. in the input folder you can s
 }
 ```
 
-You can set the canvas and the output directory. 
+The configuration file allows you to set:
+- Output directory location
+- Canvas dimensions
 
-To make use of this config file you can make a call like so: 
+To use a configuration file:
 
-`./gen2D circles grid -c 10 -f input/config.json`
+```bash
+./gen2D circles grid -c 10 -f input/config.json
+```
 
-That will produce 10 images with the circle config. Here's a sample image: 
-
-![](images/circle-300_x_300.png)
-
+This command generates 10 images using the specified circle configuration.
 
 # Contributing
 
-To contribute create an issue and/or a pull request.
+To contribute:
+1. Create an issue describing the proposed change
+2. Submit a pull request with your implementation
 
 # Planned Features
 
-[ ] Each image is created with an associated config file. This config file shows what parameters were used when that image was generated. This is helpful if you want to recreate a similar image. (not implemented)
+- [ ] Generate a configuration file for each image, documenting the parameters used for future recreation
+- [ ] Add a flag to specify the output directory
+- [ ] Create subdirectories with timestamps for each generation run
+- [ ] Switch from JSON to TOML configuration files for improved readability and conciseness
 
-[ ] A flag to indicate the output directory.
+# License
 
-[ ] Create s subdirectory indicating the date and time of the run.
-
-[ ] Use Toml files instead of JSON files for config. TOML files are easier to read and are more concise. 
-
-
-## License
-
-This project is licensed under the MIT License.
-
-License can be found [here](LICENSE).
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
